@@ -72,6 +72,8 @@ Logical operators allow evaluation of a series of operands using AND (`&&`) and 
 var foo = 1;
 var bar = 0;
 var baz = 2;
+var num1 = -1;
+var num2 = -2;
 
 // returns 1, which is true
 foo || bar;
@@ -87,9 +89,14 @@ foo && baz;
 
 // returns 1, which is true
 baz && foo;
+
+// returns -1, the first operand.
+num1 || num2;
+// returns -2, the first operand.
+num2 || num1;
 ```
 
-In the above example, the `||` operator returns the value of the first truthy operand, or in cases where neither operand is truthy, it returns the last operand. The `&&` operator returns the value of the first false operand, or the value of the last operand if both operands are truthy.
+In the above example, the `||` operator returns the value of the first truthy operand, or in cases where neither operand is truthy, it returns the first operand. The `&&` operator returns the value of the first false operand, or the value of the last operand if both operands are truthy.
 
 You'll sometimes see developers use these logical operators for flow control instead of using `if` statements. For example:
 
